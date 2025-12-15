@@ -6,8 +6,15 @@
 | 📌 Local Repository     | Saved project history in local           | git commit -m "message"                |
 | 📌 Remote Repository    | A shared version hosted on a git server  | git push, git pull, git clone + enter. |
 
-## The Git Workflow
+## The Git Workflow Diagram with Commands
+A Git workflow involves moving changes between three main areas: 
+- the Working Directory
+- the Staging Area (Index), and 
+- Local Repository, before pushing them to a 
+- Remote Repository.
+
 <table>
+<caption style="font-weight: bold">Basic Git Workflow</caption>
   <thead>
     <tr>
       <th>Area</th>
@@ -21,36 +28,57 @@
       <td rowspan="2">📌 Working Directory </td>
       <td rowspan="2">Directory on your machine</td>
       <td>git init</td>
+      <td>Initializes a new Git repository in your current directory</td>
     </tr>
     <tr>
       <td>git status</td>
+      <td>Shows the current state of your working directory and staging area</td>
     </tr>
     <tr>
       <td rowspan="2">📌 Staging Area </td>
       <td rowspan="2">Temp for commit prep</td>
       <td>git add .</td>
+      <td>Stages all changes in the current directory</td>
     </tr>
     <tr>
       <td>git add {filename}</td>
+      <td>Adds specific file changes from working directory to the staging area.</td>
     </tr>
     <tr>
       <td rowspan="2">📌 Local Repo </td>
       <td rowspan="2">Local Project history </td>
       <td>git status</td>
+      <td>Shows the current state of your working directory and staging area</td>
     </tr>
     <tr>
       <td>git commit -m "commit message"</td>
+     <td>Permanently saves staged snapshot into the local repository with a descriptive message.</td>
     </tr>
     <tr>
-      <td rowspan="3">📌 Remote Repo </td>
-      <td rowspan="3">Shared version on GitHub server</td>
-      <td>git clone</td>
+      <td rowspan="6">📌 Remote Repo </td>
+      <td rowspan="6">Shared version on GitHub server</td>
+      <td>git clone [URL]</td>
+      <td>Creates a local copy of a remote repository.</td>
     </tr>
     <tr>
-      <td>git push</td>
+      <td>git push [remote] [branch]</td>
+     <td>Uploads local commits to the remote repository</td>
     </tr>
     <tr>
       <td>git pull</td>
+      <td>One-step git fetch from remote + git merge into local branch.</td>
+    </tr>
+    <tr>
+      <td>git branch [branch-name]</td>
+      <td>Creates a new branch.</td>
+    </tr>
+    <tr>
+      <td>git checkout [branch-name] or git switch [branch-name]</td>
+      <td>Switches between different branches.</td>
+    </tr>
+    <tr>
+      <td>git merge [branch-name]</td>
+      <td>Combines changes from the specified branch into your current branch.</td>
     </tr>
   </tbody>
 </table>
