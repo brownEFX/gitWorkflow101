@@ -21,7 +21,7 @@ Start by creating a local folder and initializing it as a Git repository.
 Once your local repo has its first commit, link it to a remote server.
 
     # Link local repo to a remote address (replace with your repo URL)
-    git remote add origin [remote_repository_url]
+    
 
     # Push the initial main branch to the remote server
     git push -u origin main
@@ -43,7 +43,13 @@ Upload your feature branch to remote repo for review.
 
 ### 5️⃣ Create and Merge the Pull Request
 The final steps move from your terminal to the remote server's web interface (e.g., GitHub).
-1. Open PR: Navigate to your repository on GitHub. You will typically see a prompt to "Compare & pull request" for the branch you just pushed.
+1. Open PR: 
+   ❶ Navigate to your repository on GitHub.
+   ❷ Select Pull Requests tab. 
+   ❸ Click "Compare & pull request" for the branch you just pushed.
+   ❹ Add a Title && Description
+   ❺ Click Create Pull Request
+   ❶❷❸❹❺❻❼ ❻❼❾❿
 2. Review: Collaborators review your code, leave comments, and suggest changes.
 3. Merge: Once approved, click "Merge pull request" on the web page to join your feature branch into main.
 4. Clean Up: After merging, delete the remote branch on the website and update your local main branch.
