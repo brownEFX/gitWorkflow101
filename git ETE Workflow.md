@@ -37,7 +37,7 @@ Include explanations, descriptions and commands at each stage and what those com
       ✅️ Print Working Directory to display the full, absolute path of current location: pwd + enter
       ✅️ View files and sub-directory: dir + enter
       ✅️ View contents of directory: ls + enter
-      ✅️ View directory with hidden files: ls -a + enter
+      ✅️ View directory with hidden files: Get-ChildItem -Force + enter
 ---
 ### 🎯 Initialize Git in your local project folder:
     📌 Initialize Git in your local project folder: git init + enter.
