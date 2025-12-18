@@ -25,10 +25,14 @@
 | git remote add origin                | Link local repo to a remote server         |
 | git push -u origin main              | Push initial main branch to remote server  |
 
-### 🎯  Area: Remote Repo
-| ***Commands***                       | ***CMD Description***                      |
-|--------------------------------------|--------------------------------------------|
-| gitUI - Create PR                    | Link local repo to a remote server         |
+### 🎯  Area: Remote Repo: gitUI
+| ***Commands***      | ***CMD Description***                                                                            |
+|---------------------|--------------------------------------------------------------------------------------------------|
+| Open PR             | Click "Compare & pull request" for the branch you just pushed                                    |
+| Create PR           | Add PR Title and PR Description, then click Create Pull Request                                  |
+| Review Code updates | Collaborators review your code, leave comments, and suggest changes                              |
+| Merge               | Once approved, click "Merge pull request" on the web page to join your feature branch into main. |
+| Review Code updates | Collaborators review your code, leave comments, and suggest changes                              |
 
 ## 🧭 Workflow Stages Overview
 | ***Stage***                | ***Purpose***                            | ***Key Commands***                                         |
