@@ -6,6 +6,44 @@
 | 📌 Local Repository     | Saved project history in local           | git commit -m "message"                |
 | 📌 Remote Repository    | A shared version hosted on a git server  | git push, git pull, git clone + enter. |
 
+## Git Command - AI Prompts
+1. Working Directory:
+   - What is git init?
+   - What is echo "# Project Title" > README.md?
+   - What is git Status?
+
+2. Staging Area:
+    - What is the difference between git add . and git add <file_name> [e.g. git add README.md]?
+    - What is git add -p?
+    - What is git add -u?
+
+3. Move files from Staging Area to Local Repo history: 
+  - What does git commit -m "Commit message" do?
+
+4. Link local repo to remote:
+  - What is git remote add origin [remote_repository_url]?
+  - What is git remote -v?
+
+5. Local Repo:
+    - What is git log? 
+    - What is git branch [branch-name]?
+    - What is git checkout -b [branch-name]?
+    - What is git switch -c [branch-name]?
+    - What is git branch?
+    - What is the difference between git checkout [branch-name] and git switch [branch-name]? Which one is recommended?
+    - What is git merge [branch-name]?
+
+6. Remote Repo - New Project
+    - What is the difference between git push -u origin HEAD vs git push origin <branch-name>?
+    - What is git push -u origin main or git push [remote] [branch]?
+    - What is a pull request?
+    - what is git pull?
+    - What is git fetch?
+    - What is git merge?
+
+7. Remote Repo - Existing Project
+   - What is git clone?
+
 ## The Git Workflow Diagram with Commands
 A Git workflow involves moving changes between three main areas: 
 - the Working Directory
@@ -35,11 +73,11 @@ A Git workflow involves moving changes between three main areas:
       <td rowspan="3">📌 Working Directory </td>
       <td rowspan="3">Directory on your machine</td>
       <td>git init</td>
-      <td>Initializes a new Git repository in your current directory</td>
+      <td>Initializes a new Git repository in your current directory. Adds hidden .git directory</td>
     </tr>
     <tr>
       <td>git remote add origin [remote_repository_url]</td>
-      <td>Link local repo to remote:</td>
+      <td>Link local repo to new remote:</td>
     </tr>
     <tr>
       <td>git status</td>
