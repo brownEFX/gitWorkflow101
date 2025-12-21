@@ -1,14 +1,14 @@
 # 🧭 The Existing Project gitWorkflow (Clone to Merge)
-| ***Area***           | ***Area Description***  	                       | ***Commands***                                    | ***CMD Description***                                         |
-|----------------------|-------------------------------------------------|---------------------------------------------------|---------------------------------------------------------------|
-| 📌 Remote Repo 	     | The source of truth (GitHub/GitLab)             | 	git clone [URL]	                                 | Downloads the entire project and history to your machine.     |
-| 📌 Local Repo	       | Your local copy of the history	                 | git switch -c feature-name                        | 	Creates and switches to a new feature branch.                |
-| 📌 Working Dir       | 	Where you edit the code	                       | git status	                                       | Verifies which files you have changed.                        |
-| 📌 Staging Area	     | Preparation for commit                          | 	git add .	                                       | Groups your changes together.                                 |
-| 📌 Local Repo        | 	Saving your work                               | 	git commit -m "message"	                         | Saves the changes into your local history.                    |
-| 📌 Remote Repo       | 	Sharing your work                              | 	git push -u origin HEAD	                         | Uploads your branch and sets it to track the remote.          |
-| 📌 Web UI            | 	Pull Request (PR) Phase	N/A (Web Browser)	     | Open a Pull Request on GitHub to request a merge. |
-| 📌 Local Repo        | 	Syncing after Merge	| git pull origin main	                             | Updates your local machine with the newly merged code.   |
+| ***Area***       | ***Area Description***  	                       | ***Commands***                                    | ***CMD Description***                                     |
+|------------------|:------------------------------------------------|---------------------------------------------------|-----------------------------------------------------------|
+| 📌 Remote Repo 	 | The source of truth (GitHub/GitLab)             | 	git clone [URL]	                                 | Downloads the entire project and history to your machine. |
+| 📌 Local Repo	   | Your local copy of the history	                 | git switch -c feature-name                        | 	Creates and switches to a new feature branch.            |
+| 📌 Working Dir   | 	Where you edit the code	                       | git status	                                       | Verifies which files you have changed.                    |
+| 📌 Staging Area	 | Preparation for commit                          | 	git add .	                                       | Groups your changes together.                             |
+| 📌 Local Repo    | 	Saving your work                               | 	git commit -m "message"	                         | Saves the changes into your local history.                |
+| 📌 Remote Repo   | 	Sharing your work                              | 	git push -u origin HEAD	                         | Uploads your branch and sets it to track the remote.      |
+| 📌 Web UI        | 	Pull Request (PR) Phase	N/A (Web Browser)	     | Open a Pull Request on GitHub to request a merge. |
+| 📌 Local Repo    | 	Syncing after Merge	                           | git pull origin main	                             | Updates your local machine with the newly merged code.    |
 
 # 🚀Step-by-Step Execution Example
 ## 📌 Setup New Project
