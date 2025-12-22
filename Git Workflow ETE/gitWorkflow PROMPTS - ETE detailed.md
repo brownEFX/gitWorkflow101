@@ -39,8 +39,27 @@
       <td>Initializes a new Git repository in your current directory. Adds hidden .git directory</td>
     </tr>
     <tr>
-      <td>Shell Command: echo "# Project Title" > README.md </td>
+      <td rowspan="2">echo "# Project Title" > README.md </td>
       <td>Create an initial file</td>
+    </tr>
+    <tr>
+      <td>
+        <ol>
+            <li>Shell Command to create/overwrite a file named README.md and insert the text "# Project Title" into it </li>
+            <li>Command components:</li>
+                <ul>
+                    <li> echo "# Project Title": Outputs the string (text) "# Project Title" to the standard output</li>
+                    <li> > : Redirection operator redirects output from echo command as input to destination file specified (e.g. README.md)</li>
+                    <li> README.md: This is the name of the destination file. Create new or overwrite existing</li>
+                    <li>BASICALLY: </li>
+                    <ul>
+                        <li> echo "# Project Title" > README.md creates/overwrites README.md with "# Project Title" content</li>
+                        <li> The file is stored in current dir</li>
+                    </ul>
+                </ul>
+            <li> The subdirectory .git contains all the necessary metadata and objects for Git to start tracking changes.</li>
+        </ol> 
+      </td> 
     </tr>
     <tr>
       <td>git commit -m "Initial commit"</td>
@@ -83,7 +102,7 @@
     <tr>
       <td>git add -A</td>
       <td>
-        <ul>
+        <ul> 
             <li>git add -A (or its equivalent --all) stages all changes to the Git index/staging area for the next commit.</li> 
             <li>Key Features: git add -A:</li>
               <ul>

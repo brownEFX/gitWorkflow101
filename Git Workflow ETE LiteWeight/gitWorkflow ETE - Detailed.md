@@ -3,11 +3,9 @@
 - It offers AI-friendly prompts to explain each concept. 
 - Ideal for onboarding, documentation, or interactive learning.  
 
-1. 🏁 Initialization: Working Directory
-    - What is git init?
-    - How do you create a README file using shell commands before committing with Git?
-      - What is echo "# Project Title" > README.md?
-    - What is git Status?
+# 🏁 Initialization: Working Directory  
+1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣🔟
+## 1️⃣ Setup Working Directory 
 
 <table>
 <caption style="font-weight: bold">📌Area: Working Directory - Local Machine</caption>
@@ -34,41 +32,12 @@
       <td>cd "myWorkspace gitWorkflow" + enter </td>
       <td>Navigate to Working Directory</td>
     </tr>
-    <tr>
-      <td>git init</td>
-      <td>Initializes a new Git repository in your current directory. Adds hidden .git directory</td>
-    </tr>
-    <tr>
-      <td>Shell Command: echo "# Project Title" > README.md </td>
-      <td>Create an initial file</td>
-    </tr>
-    <tr>
-      <td>git commit -m "Initial commit"</td>
-      <td>Save snapshot to local repo</td>
-    </tr> 
-    <tr>
-      <td>git remote add origin [remote_repository_url]</td>
-      <td>Link local repo to new remote:</td>
-    </tr>
-    <tr>
-      <td>git status</td>
-      <td>Shows untracked/modified files.</td>
-    </tr>
   </tbody>
 </table>
 
-2. 🔄 Remote Repo: Existing Project
-    - What is git clone?
-    - What is git fork?
-    - git clone vs git fork?
-
-3. 📤 Staging Area:
-    - What is the difference between git add . and git add <file_name> (e.g. git add README.md)?
-    - What is git add -p?
-    - What is git add -u?
-
+## 2️⃣ Initialise Local Repo
 <table>
-<caption style="font-weight: bold">📌Area: Staging Area</caption>
+<caption style="font-weight: bold">📌Area: Initialise Local Repo</caption>
   <thead>
     <tr>
       <th>Commands</th>
@@ -77,81 +46,93 @@
   </thead>
   <tbody>
     <tr>
-      <td>git add . </td>
-      <td>Stage ALL files. Stages changes within your current directory and its subdirectories</td>
-    </tr>
-    <tr>
-      <td>git add -A</td>
+      <td>git init</td>
       <td>
-        <ul>
-            <li>git add -A (or its equivalent --all) stages all changes to the Git index/staging area for the next commit.</li> 
-            <li>Key Features: git add -A:</li>
-              <ul>
-                <li>Comprehensive Staging: Includes all new (untracked) files, modified files, and deleted files.</li>
-                <li>Repository-Wide Scope: git add -A stages changes from the entire repository, regardless of which folder you are currently in.</li>
-            </ul>
-            <li>Common Workflow: git add -A:</li>
-                <ul>
-                    <li>git status: Check status to see which files are untracked or modified.</li>
-                    <li>git add -A: Stage changes to prepare everything for a snapshot.</li>
-                    <li>git commit -m "commit message": save staged changes into the local project history.</li>
-                </ul>
-        </ul>
+        <ol>
+            <li>Creates & initializes a new Git repository in your current directory.</li>
+            <li>Adds hidden .git subdirectory with necessary metadata and objects for Git to start tracking changes.</li>
+            <li>Rerun git init to pick up new templates or move the repository path.</li>
+            <li>Verify git init created hidden .git subdirectory: ls -Force + enter. </li>
+        </ol> 
       </td>
-    </tr>
+    </tr> 
     <tr>
-      <td>git add "file_name"</td>
-      <td>Stage specific file e.g. README.md </td>
-    </tr>
-    <tr>
-      <td>git add -p</td>
+      <td>git init -b main</td>
       <td>
-        <ul>
-            <li>git add -p (short for --patch) is used for interactive staging.</li>
-            <li>Lets you choose portions/specific "hunks"/parts) of modified files to add to Staging for next commit. </li>
-            <li>Presents you with a chunk of changes and prompt you for a command:</li>
-            <li>How git add -p works:</li>
-              <ul>
-                <li>Git divides your changes into chunks and asks you what to do with each one.</li>
-                <li>This helps separate unrelated changes (e.g., a bug fix and a formatting update) into different, focused commits.</li>
-            </ul>
-            <li>Common git add -p commands:</li>
-                <ul>
-                    <li>Use n(no) to ignore the chunk, do not stage this hunk</li>
-                    <li>Use d(do not stage) Do not stage this hunk or any of the remaining hunks in this file.</li>
-                    <li>Use y(yes) to stage the chunk, stage this hunk for the next commit</li> 
-                    <li>Use s(split) to split it into smaller hunks if they are separated by unchanged lines</li>
-                    <li>Use e(edit) to manually edit the hunk in your default text editor</li>
-                    <li>Use q(quit) to exit interactive session without staging any more hunks (already staged hunks remain staged).</li>
-                    <li>Use ?(help) to display a summary of all available commands.</li>
-                </ul>
-        </ul>
+        <ol>
+            <li>git init -b main sets the default branch name to main.</li>
+            <li>Adds hidden .git subdirectory with necessary metadata and objects for Git to start tracking changes.</li>
+            <li>Rerun git init to pick up new templates or move the repository path.</li>
+            <li>Verify git init created hidden .git subdirectory: ls -Force + enter. </li>
+        </ol> 
       </td>
-    </tr>
+    </tr> 
     <tr>
-      <td>git add -u</td>
-      <td>
-       <ul>
-        <li>git add -u (short for --update) stages changes for all files that Git is already tracking.</li>
-        <li>Key Characteristics:</li>
-            <ul>
-                <li>Only Tracked Files: It specifically stages modifications and deletions of files already in the Git index.</li>
-                <li>Ignores Untracked Files: Will not stage new files that have been created but are not yet being tracked by Git</li>
-                <li>Project-Wide Scope: Identifies changes across entire repository, regardless of which subdirectory you are currently in.</li>
-            </ul>
-        <li>When to use it:</li>
-            <ul>
-                <li>Cleaning up file deletions from the repo in the next commit.</li>
-                <li>Incremental updates to stage every change made to existing code while explicitly leaving out files you aren't ready to track yet.</li>
-            </ul>
-        </ul> 
-      </td>
+      <td>git status</td>
+      <td>Shows new(untracked) and/or modified files.</td>
     </tr>
   </tbody>
 </table>
 
-4. 🧠 Commit History: Local Repository (Move files from Staging Area to Local Repo history:)
-- What does git commit -m "Commit message" do?
+## 3️⃣️ Add initial files
+<table>
+<caption style="font-weight: bold">📌Area: Working Directory - Initial Setup files</caption>
+  <thead>
+    <tr>
+      <th>Commands</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>echo "# Project Title" > README.md </td>
+      <td>
+        <ul style="list-style-type:square;">
+            <li>echo "# Project Title" > README.md creates/overwrites README.md with "# Project Title" content </li>
+            <li>"# Project Title" is h1 in Markdown syntax</li> 
+            <li>VERIFY:</li>
+                <ul>
+                    <li>View files and subdirectories: ls</li>
+                    <li>View directory with hidden and Sys files: ls -Force + enter</li>
+                </ul>
+        </ul> 
+      </td> 
+    </tr>
+    <tr>
+      <td>git status </td>
+      <td>Snapshot current state of local repository to monitor changes in your working directory and staging area.</td>
+    </tr> 
+  </tbody>
+</table>
+# 📤 Staging Area:
+## 4️⃣ Add files to Staging Area for commit
+<table>
+<caption style="font-weight: bold">📌Action: Add files to the Staging</caption>
+  <thead>
+    <tr>
+      <th>Commands</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">git add </td>
+      <td>git add "fileName": Add specific file to the Staging Area.E.g. git add README.md </td>
+    </tr> 
+    <tr>
+      <td>git add .: Add all changes in the current dir and subdirectories to the Staging Area.</td>
+    </tr> 
+    <tr>
+      <td>git add -A: Repository-Wide, comprehensive staging of all new (untracked) files, modified files, and deleted files.</td>
+    </tr> 
+    <tr>
+      <td>git status </td>
+      <td>Snapshot current state of local repository to monitor changes in your working directory and staging area.</td>
+    </tr> 
+  </tbody>
+</table>
+
+# 🧠 Commit History: Local Repository 
 - What does git commit -m "Commit message" do?
 - What is git log?
 - What is git branch <branch-name>?
@@ -161,8 +142,9 @@
 - What is git checkout <branch-name> vs git switch <branch-name>? Which one is recommended?
 - What is git merge <branch-name>?
 
+## 5️⃣ Commit work in Staging Area
 <table>
-<caption style="font-weight: bold">📌Area: Local Repo</caption>
+<caption style="font-weight: bold">📌Area: Local Repo - Commit staged</caption>
   <thead>
     <tr>
       <th>Commands</th>
@@ -171,99 +153,57 @@
   </thead>
   <tbody>
     <tr>
-      <td rowspan="4"> git commit -m "Commit message" </td>     
-      <td>Creates a snapshot of files in the Staging Area and saves it to Local Repo History</td>
-    </tr>
-    <tr>   
-      <td>-m flag allows you to provide a short summary of the changes directly in the terminal.</td>
-    </tr>
-    <tr>   
-      <td>Multiple -m flags to longer description: git commit -m "Title" -m "Detailed description"</td>
-    </tr>
-    <tr>   
-      <td>Git creates unique 40-character SHA-1 string identifying the specific version.</td>
+      <td> git commit -m "Commit message" </td>    
+      <td>
+        <ul>
+            <li>Creates a snapshot of files in the Staging Area and saves it to Local Repo History</li>
+            <li>Git creates unique 40-character SHA-1 string identifying the specific version.</li>
+            <li>-m: provide a short summary of the changes.</li>
+            <li>Use multiple -m flags for longer description: git commit -m "Title" -m "Detailed description"</li>
+        </ul>
+      </td>
     </tr>
     <tr>
-      <td rowspan="9">git log</td>
-      <td>Displays detailed commit history of your repository </td>
-    </tr>
-    <tr>   
-      <td>NOTE: Use arrows keys or space to scroll and q to exit log viewer.</td>
-    </tr>
-    <tr>   
-      <td>git log --oneline: Condenses each commit into a single line for a high-level overview.</td>
-    </tr>
-    <tr>   
-      <td>git log --graph: Displays a visual ASCII graph showing how branches diverge and merge.</td>
-    </tr>
-    <tr>   
-      <td>git log -n "number": Limits the output to a specific number of recent commits (e.g., git log -n 5)</td>
-    </tr>
-    <tr>   
-      <td>git log -p (or --patch): Shows the full "diff" or actual code changes for each commit.</td>
-    </tr>
-    <tr>   
-      <td>git log --stat: Shows statistics for files modified, including the number of lines added or deleted.</td>
-    </tr>
-    <tr>   
-      <td>git log --author="Name": Filters the history to only show commits from a specific person.</td>
-    </tr>
-    <tr>   
-      <td>git log --grep="keyword": Searches commit messages for a specific word or phrase.</td>
+      <td>git log</td> 
+      <td>
+        <ul>
+            <li>Displays detailed commit history of your repository </li>
+            <li>NOTE: Use arrows keys or space to scroll and q to exit log viewer.</li>
+            <li>Common git log Commands:</li>
+                <ul>
+                    <li>git log --oneline: Condenses each commit into a single line for a high-level overview.</li>
+                    <li>git log -n "number": Limits the output to a specific number of recent commits (e.g., git log -n 5</li>
+                    <li>git log --stat: Shows statistics for files modified, including the number of lines added or deleted.</li>
+                </ul>
+        </ul>
+      </td>
     </tr>
     <tr>
-      <td rowspan="8">git branch</td>
-      <td>git branch "branch-name" creates a new branch in your local repository but does not switch you to it.</td>
-    </tr>
-    <tr>
-      <td>git switch "branch-name": to move to the new branch. </td>
-    </tr>
-    <tr>
-      <td>git checkout "branch-name": to move to the new branch. </td>
-    </tr>
-    <tr>
-      <td>git switch -c "branch-name": to create a new branch and switch to it immediately in one step. </td>
-    </tr>
-    <tr>
-      <td>git checkout -b "branch-name": to create a new branch and switch to it immediately in one step. </td>
-    </tr>
-    <tr>
-      <td>git branch -m "old-name" "new-name": to rename a branch. </td>
-    </tr>
-    <tr>
-      <td>git branch -d "branch-name": standard delete. </td>
-    </tr>
-    <tr>
-      <td>git branch -D "branch-name": forced delete if changes aren't merged </td>
-    </tr>
-    <tr>
-      <td rowspan="3">git merge</td>
-      <td>Integrates independent lines of development into a single branch. </td>
-    </tr>
-    <tr>
-      <td>Brings work from one branch (e.g., a feature branch) into another (e.g., the main branch).</td>
-    </tr>
-    <tr> 
-          <td>
-            <p>git merge Workflow: merge a feature branch into main:</p>
-            <ol type="a">
-                <li>Switch to the target: git checkout main.</li>
-                <li>Update it: git pull origin main (to ensure you have the latest changes).</li>
-                <li>Merge the feature: git merge feature-branch-name.</li>
-                <li>Finish: If there were conflicts, resolve them and then git commit to finalize.</li>
-            </ol>
-          </td>
-    </tr>
+      <td>git status </td>
+      <td>Snapshot current state of local repository to monitor changes in your working directory and staging area.</td>
+    </tr> 
   </tbody>
 </table>  
-  
-5. 🌐 Remote Setup - Link local repo to remote:
+
+# 🌐 Remote Setup - Link local repo to remote:
 - What is git remote add origin <remote_repository_url>?
 - What is git remote -v?
 - What is git remote show origin?
+  1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣🔟
+## 6️⃣ Connect to Remote (GitHub)
+Once your local repo has its first commit, link it to a remote server.
+
+2. 🔄 Remote Repo: Existing Project
+    - What is git clone?
+    - What is git fork?
+    - git clone vs git fork?
+
+    # Push the initial main branch to the remote server
+    git push -u origin main
+
 
 <table>
-<caption style="font-weight: bold">📌Area: Link Local Repo  to Remote</caption>
+<caption style="font-weight: bold">📌Area: Link local repo to Remote</caption>
   <thead>
     <tr>
       <th>Commands</th>
@@ -272,37 +212,43 @@
   </thead>
   <tbody>
     <tr>
-      <td rowspan="2"> git remote add origin "remote_repository_url" </td>     
-      <td>Creates a create a link between your local Git repository and a remote server</td>
-    </tr>
+      <td>git remote add origin [remote_repository_url]</td>
+      <td>
+        <ol>
+            <li>GitUI: Create new empty Repo. DON'T initialize it with a README or license file online</li>
+            <li>Copy the remote repository's URL</li>
+            <li>CLI: Link local repo to new remote: git remote add origin [remote_URL] + enter </li>
+            <li>NOTE: Once configured, you can use remote shortname in commands like git fetch "remote", git pull "remote", and git push "remote" to exchange data with that repository.</li>
+        </ol>
+      </td>
+     </tr>
     <tr>
-        <td>
-        <p>git merge Workflow: merge a feature branch into main:</p>
-        <ul style="list-style-type:square;">
-            <li>git remote add: Instructs Git to create a new connection record to a remote repository.</li>
-            <li>origin: An industry standard shorthand name (or alias) for the remote URL.</li>
-            <li>remote_repository_url: Remote Repo URL (e.g., https://github.com/user/repo.git).</li>
-        </ul>
-        <p> Once a remote is configured, you can use its shortname in commands like git fetch "remote", git pull "remote", and git push "remote" to exchange data with that repository. </p>
-        </td>
-    </tr>
     <tr>
-      <td rowspan="2"> git remote </td>     
+      <td rowspan="3"> git remote </td>     
       <td>Lists shortnames/aliases of the remotes you have configured. </td>
     </tr>
     <tr>
         <td>
-        <p>Other common git remote commands:</p>
+        Verify the Remote:
         <ul style="list-style-type:square;">
             <li>git remote -v: Lists existing remotes with their URLs</li>
             <li>git remote show origin: Displays detailed information about a specific remote, including fetch/push URLs and tracking branches.</li>
         </ul>
         </td>
     </tr>
+    <tr>
+      <td>
+        <p>Managing Origin:</p>
+        <ul style="list-style-type:square;">
+            <li>git remote set-url origin [new_remote_URL]: Change Remote Repo URL to replace old with new URL</li>
+            <li>git remote -v : Confirm change</li>
+        </ul>
+    </td>
+    </tr>
   </tbody>
 </table>
 
-6. 🚀 Remote Repo: New Project
+# 🚀🔄 Sync Local && Remote (GitHub)
     - What is git fetch? git fetch <remote>?
     - hat is git merge? git merge "remote"?
     - What is git pull? git pull <remote>?
@@ -311,8 +257,9 @@
     - What is git push -u origin main or git push <remote> <branch>?
     - What is a pull request?
 
+## 7️⃣ Download data from Remote (Don't merge)
 <table>
-<caption style="font-weight: bold">📌Area: Link Local Repo  to Remote</caption>
+<caption style="font-weight: bold">📌Area: Download from Remote</caption>
   <thead>
     <tr>
       <th>Commands</th>
@@ -321,72 +268,107 @@
   </thead>
   <tbody>
     <tr>
-      <td rowspan="3"> git fetch </td>     
-      <td>Downloads data from the remote but does not merge it into your local work.</td>
-    </tr>
-    <tr>
+      <td> git fetch </td>  
         <td>
-        <p>How git fetch works:</p>
-        <ul style="list-style-type:square;">
-            <li>Git connects to the specified remote repository (usually origin by default).</li>
-            <li>It downloads any new commits, branches, and tags that you don't have locally.</li>
-            <li>Updates remote-tracking branches (e.g., origin/main or origin/develop), which are local mirrors of the remote branches' state.</li>
-            <li>Local like main branch and your working directory remain unchanged.</li>
-        </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>
-        <p>Common git fetch commands:</p>
-        <ul style="list-style-type:square;">
-            <li>git fetch origin: Fetches updates from the remote named "origin".</li>
-            <li>git fetch "remote-name": Fetches updates from a specific remote, such as upstream.</li>
-            <li>git fetch --all: Fetches updates from all configured remotes.</li>
-            <li>git fetch --prune: Removes references to branches that no longer exist on the remote repository</li>
-            <li>git fetch origin "branch-name": Fetches only a specific branch's updates. </li>
-        </ul>
-        </td>
-    </tr>
-    <tr>
-      <td rowspan="4"> git pull </td>     
-      <td>Updates your local branch with the latest changes from a remote repository. Shorthand for fetch and integrate</td>
-    </tr>
-    <tr>
-        <td>
-        <p>NB: git pull is a local command used on your machine to sync your own copy of the code. </p>
-        <p>Core Mechanism - git pull command performs a two-step process in one command:</p>
-        <ul style="list-style-type:square;">
-            <li>git fetch: Downloads new commits, files, and references from remote repo to your local machine without altering your current work.</li>
-            <li>git merge (default): Immediately integrates those downloaded changes into your active local branch.</li>
-        </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>
-        <p>Common git pull commands:</p>
-        <ul style="list-style-type:square;">
-            <li>git pull: Fetches and merges changes from the default remote (e.g. origin) into your current branch.</li>
-            <li>git pull "remote" "branch": Pulls changes from a specific remote and branch (e.g., git pull origin main).</li>
-            <li>git pull --rebase: Fetches changes but uses git rebase instead of a merge, resulting in a cleaner, linear commit history.</li>
             <ul>
-                <li>Integrates changes from one branch onto another by moving or reapplying a series of commits to a new base commit</li>
-                <li>It is an alternative to git merge that results in a cleaner, linear project history, free of unnecessary merge commits. </li>
-            </ul> 
-            <li>git pull --ff-only: Only updates if it can "fast-forward" without creating a new merge commit; it fails if your local branch has diverged.</li>
-        </ul>
+             <li>Downloads data from the remote but does not merge it into your local work.</li>
+             <li>Git connects to remote and downloads any new commits, branches, and tags</li>
+             <li>Updates remote-tracking branches (e.g., origin/main or origin/develop)</li>
+             <li>Local like main branch and your working directory remain unchanged.</li> 
+             <li>BENEFIT: Ability to inspect the incoming changes before applying them. </li>
+                <li>Common git fetch commands:</li>
+                    <ul style="list-style-type:square;">
+                        <li>git fetch origin: Fetches updates from the remote named "origin".</li>
+                        <li>git fetch "remote-name": Fetches updates from a specific remote, such as upstream.</li>
+                        <li>git fetch --all: Fetches updates from all configured remotes.</li>
+                        <li>git fetch --prune: Removes references to branches that no longer exist on the remote repository</li>
+                        <li>git fetch origin "branch-name": Fetches only a specific branch's updates. </li>
+                    </ul>
+            </ul>
         </td>
     </tr>
+  </tbody>
+</table>
+
+## 8️⃣ Integrate changes from Data Downloaded from Remote
+<table>
+<caption style="font-weight: bold">📌Area: Integrate data from Remote</caption>
+  <thead>
     <tr>
-        <td>
-        <p>Common git pull - Key Considerations commands:</p>
-        <ul style="list-style-type:square;">
-            <li>Action - 	Downloads and merges changes.</li>
-            <li>Safety: Risk of merge conflicts.</li> 
-            <li>Use Case: Quick synchronization when you trust the remote.</li>
-        </ul>
-        </td>
+      <th>Commands</th>
+      <th>Description</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
+      <td>Option 1: Integrate with git merge:</td> 
+      <td>
+        <ul>
+            <li>git merge origin/"branch_name" (e.g., git merge origin/main).</li>
+            <li>Integrates fetched changes into your current local branch.</li>
+            <li>Brings work from one branch (e.g., a feature branch) into another (e.g., the main branch).</li>
+            <li>If local and remote changes have diverged, it creates a "merge commit" to reconcile the histories.</li>
+        </ul>
+      </td>
+    </tr>  
+    <tr>
+      <td>Option 2: Integrate with git rebase: </td> 
+      <td>
+        <ul>
+            <li>git rebase origin/main</li>
+            <li> For cleaner, linear project history, you can use git rebase instead of git merge</li>
+            <li>git rebase moves local commits to sit on top of the latest fetched commits, rewriting the commit history.</li>
+            <li> This process is effectively achieved by using git pull --rebase</li>
+        </ul>
+      </td>
+    </tr>  
+  </tbody>
+</table> 
+
+
+## 9️⃣ Download & Integrate changes Data from Remote
+<table>
+<caption style="font-weight: bold">📌Area: Pull from Remote</caption>
+  <thead>
+    <tr>
+      <th>Commands</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> git pull </td>     
+      <td>
+        <ul>
+            <li>Updates local branch with the latest changes from a remote repository. Shorthand for fetch and integrate</li>
+            <li>NB: git pull is a local command used on your machine to sync your own copy of the code.</li>
+            <li>Core Mechanism - git pull command performs a two-step process in one command:</li>
+                <ol>
+                    <li>git fetch: Downloads new commits, files, and references from remote repo to your local machine without altering your current work.</li>
+                    <li>git merge (default): Immediately integrates those downloaded changes into your active local branch.</li>
+                </ol>
+            <li>Common git pull commands:</li>
+             <ul style="list-style-type:square;">
+              <li>git pull: Fetches and merges changes from the default remote (e.g. origin) into your current branch.</li>
+              <li>git pull "remote" "branch": Pulls changes from a specific remote and branch (e.g., git pull origin main).</li>
+              <li>git pull --rebase: Fetches changes but uses git rebase instead of a merge, resulting in a cleaner, linear commit history.</li>
+            </ul>
+        </ul>
+      </td>
+    </tr>
+</tbody>
+</table>
+
+
+<table>
+<caption style="font-weight: bold">📌Area: Pull from Remote</caption>
+  <thead>
+    <tr>
+      <th>Commands</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
       <td rowspan="4"> git rebase </td>     
       <td>
         <ul> 
@@ -426,6 +408,18 @@
         </ul>
         </td>
     </tr>
+</tbody>
+</table>
+
+<table>
+<caption style="font-weight: bold">📌Area: Pull from Remote</caption>
+  <thead>
+    <tr>
+      <th>Commands</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td rowspan="4"> git push </td>     
       <td>Uploads local commit history to a remote repository.</td>
@@ -521,6 +515,44 @@ The final steps move from your terminal to the remote server's web interface (e.
     </tr>
 </tbody>
 </table>  
+
+7. Working with branches
+<table>
+<caption style="font-weight: bold">📌Area: Link Local Repo  to Remote</caption>
+  <thead>
+    <tr>
+      <th>Commands</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="8">git branch</td>
+      <td>git branch "branch-name" creates a new branch in your local repository but does not switch you to it.</td>
+    </tr>
+    <tr>
+      <td>git switch "branch-name": to move to the new branch. </td>
+    </tr>
+    <tr>
+      <td>git checkout "branch-name": to move to the new branch. </td>
+    </tr>
+    <tr>
+      <td>git switch -c "branch-name": to create a new branch and switch to it immediately in one step. </td>
+    </tr>
+    <tr>
+      <td>git checkout -b "branch-name": to create a new branch and switch to it immediately in one step. </td>
+    </tr>
+    <tr>
+      <td>git branch -m "old-name" "new-name": to rename a branch. </td>
+    </tr>
+    <tr>
+      <td>git branch -d "branch-name": standard delete. </td>
+    </tr>
+    <tr>
+      <td>git branch -D "branch-name": forced delete if changes aren't merged </td>
+    </tr>
+  </tbody>
+</table> 
 
 7. 🧹 Optional Additions for Advanced Users
 - What is git config --global user.name and user.email?
